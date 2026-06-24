@@ -17,7 +17,13 @@ export default function App() {
   const [challenge, setChallenge] = useState<Challenge | null>(null);
 
   function handleRestartGame() {
-    alert("Reiniciar jogo");
+    const isConfirmed = window.confirm(
+      "Você tem certeza que deseja reiniciar o jogo?",
+    );
+
+    if (isConfirmed) {
+      startGame();
+    }
   }
 
   function startGame() {
